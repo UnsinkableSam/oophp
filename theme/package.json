@@ -8,5 +8,9 @@
         "less-plugin-clean-css": "^1.5.1",
         "normalize.css": "^8.0.0",
         "stylelint": "^8.2.0"
+    },
+    "dependencies": {
+        "cryptiles": "^4.1.2",
+        "hoek": "^5.0.4"
     }
 }
