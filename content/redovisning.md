@@ -29,19 +29,112 @@ Kmom02
 Här är redovisningstexten
 
 
+Hur gick det att överföra spelet “Gissa mitt nummer” in i din me-sida?
+Det var rätt enkelt tycker jag. Fick lite problem med att använda namespace på exception för jag hade inte döpt min exception fil till de samma som mitt error. Jag tänkte göra extra uppgifter men kände jag hade redan lagt så mycket tid att jag gjorde bara lite på de tex involverade get och post. Kunde enkelt gjort en route som funkade för alla men de var ju inte direkt någon extra uppgift.
+
+Berätta om din syn på modellering likt UML jämfört med verktyg som phpDocumentor. Fördelar, nackdelar, användningsområde? Vad tycker du om konceptet make doc?
+Vad kan jag säga mer än att make doc gör det lite mer värt att investera mer tid i mina kommentarer. Tidigare har det kanske varit lite drygt att skriva kommentarer men jag känner absolut att jag börjar förstå vikten av a skriva kommentarer speciellt när man har phpDocumentor.
+
+phpDocumentor är ett snabbt bra verktyg för att få en helhet i programmets documentation väldigt bra om man har någon som hela tiden vill se nya uppdateringar i text format. Det vill säga man har en kund som kanske vill bli uppdaterad och varje vecka då är det lite enklare att köra med phpDocumentor än att skriva ett nytt uml för det tar ju ganska bra med tid.
+
+Hur känns det att skriva kod utanför och inuti ramverket, ser du fördelar och nackdelar med de olika sätten?
+Det blir mycket snyggare att skriva i ramverket. Jag känner det blir sämre struktur på koden att inte ha det i ramverket. Om jag inte fattat det helt fel så kan man även använda ramverkets de bugverktyg på koden som man har i ramverket men inte på den koden som är utanför.
+
+Vilken är din TIL för detta kmom?
+Det stora jag har lärt mig från detta kursmomentet är hur viktigt det är att skriva kommentarer. Men får även säga att de var lite av ett TIL att lära sig man kan köra any route med en array av tex post, get. Det var inget jag kände till tidigare men det är väldigt händigt.
+
+
+
+me-sidaLänk (Länkar till en externa sida.)Länkar till en externa sida.
+
+
+
+
+
+
+
+Vet inte vad som hände men fick lämna in igen. Lämnade direkt efter du skrev typ. Men verkar som jag inte fattade hur man skulle lämna på canvas. Aja fixat nu så rätt när du kan tack.
 
 Kmom03
 -------------------------
 
+
 Här är redovisningstexten
 
+Har du tidigare erfarenheter av att skriva kod som testar annan kod?
+Ja vi gjorde det i en tidigare kurs OOpython. Det funkade på typ samma sätt. Det är rätt enkelt att testa men jag antar det kan bli lite mer avancerat.
+
+Hur ser du på begreppen enhetstestning och att skriva testbar kod?
+Jobbigt men väldigt nyttigt när man jobbar med större projekt. Det kan vara bra som en lite check att göra ett test på varje funktion man gör bara för att man ska veta den göra vad man vill och inget annat.
+
+Förklara kort begreppen white/grey/black box testing samt positiva och negativa tester, med dina egna ord.
+White box testing handlar om att testa det i application och inte det på utsidan.  Handlar mer om att man testar mekaniken in ifrån.
+
+Black box testing är som sagt testa från utsidan. Från personen som använder application.
+
+Gray box är mer en mix av både white box och black box testing. Används mest för att hitta defekter. Jag tror dettta är den bättre delen av testnings för den testar för båda och inte bara en.
+
+Positiva tester är ju att man kör de som man har tänkt sig de ska funka medans negativa är när man kör de som man inte tänkt sig de ska funka. Det är lite som man försöker krascha programmet.
+
+Berätta om hur du löste uppgiften med Tärningsspelet 100, hur du tänkte, planerade och utförde uppgiften samt hur du organiserade din kod?
+Jag jobbade först me uml för att tänka ut hur jag skulle göra koden. Det var lite annorlunda för mig för jag hade missat att göra tärningsspelet på kmom02 i uppgifterna. Så jag hade redan börjat jobba på kmom utan det. Så som sagt började med UML fundera på hur jag skulle göra. Jag känner att jag kunde gjort det bättre men man är så förbaskat dålig på att planera koden.
+
+Game är huvudklassen man kan säga det är hjärnan i det hela. Det är den som ger order om hur spelet ska spelas.
+
+Hand är precis som det låter en hand som kan rulla träningar och hålla ett antal träningar.
+
+Computer är bara en klass som använder hand som extension. För att rulla träningar och så automatiskt.
+
+Jag är rätt säker på jag hade kunnat skippa Computer och bara köra två händer sedan två knappar en för computer och en för spelare. Men jag valde den lite mer knepiga vägen.  
+
+Dice fungerar nästan som en node. Det är inte mycket den gör förutom håller nummer.
+
+Spelet fungerar så här. Du startar upp det genom att gå till sök vägen dice/hand.
+
+Du kommer till en sida där det står Player 0 och Computer 0.
+
+Första tränings rullningen kommer vara för vem som börjar. Du trycker på start för att rulla träningen och även för att sedan gå vidare till själva spelet.
+
+Sen fungerar det så att du kör med 6 tärningar. Det var bara något jag föredrog över 1 träning. Det finns inte direkt så du kan välja eftersom jag inte hade tiden.
+
+Det är försten till hundra i total som vinner.
+
+Glöm inte save dina rullningar.
+
+Hur väl lyckades du testa tärningsspelet 100?
+Lyckades inte testa det så väl hade inte tiden gjorde ganska slarvigt när jag testade eftersom jag hade ont om tid. Så det blev ingen bra kodtäckning.
+
+Vilken är din TIL för detta kmom?
+Lägg mindre tid på städa i koden så man hinner med kursmomenten.
 
 
 Kmom04
 -------------------------
 
-Här är redovisningstexten
 
+me-sida (Länkar till en externa sida.)Länkar till en externa sida.
+
+
+
+
+
+Vilka är dina tankar och funderingar kring trait och interface?
+
+Jag känner att trait kan vara väldigt bra när man behöver en extra klass kan man säga eller något liknande till en. Det är bra just för att man inte kan extends på dubbla klasser. Interface kan säkert vara bra men jag känner inte direkt någon större mening med det. Det känns mer som en referensklass som refererar till funktioner.
+
+Hur gick det att skapa intelligensen och taktiken till tärningsspelet, hur gjorde du?
+Jag körde mest på att min dator rullar igen om den tidigare tärningsslag var mindre än spelarens.  Det verkar funka rätt bra med näst minst risk att få noll men en väldigt stor chans att öka sitt tärnings slag.
+
+Några reflektioner från att integrera hårdare in i ramverkets klasser och struktur?
+Mja jag tycker det är rätt enkelt men jag känner det kan vara jobbigt ibland att leta genom dokumentationen. Det är även ett minus att man inte vet djupet av koden i anax. Jag vet fortfarande inte varför man skapar $di direkt men jag förstår lite hur den fungerar eftersom jag fick leta och försöka förstå den för att få min $app->session att funka.
+
+Berätta hur väl du lyckades med make test inuti ramverket och hur väl du lyckades att testa din kod med enhetstester och vilken kodtäckning du fick.
+91% kunde fått mer men ville inte lägga mer tid på att testa histogram/histogram trait.
+
+Det var även lite svårt att fatta hur jag skulle testa klasser i interface eftersom de heter samma som i en klass och de blir lätt att de ignorerar interface funktionen när den rättar.
+
+Vilken är din TIL för detta kmom?
+Mitt TIL kom till när jag höll på göra tester. Jag hade byggt mitt spel så att klassen game tog emot $app för att fungera och spara kod. Jag insåg rätt fort detta blev ett problem när jag satt och testade för jag kunde inte få $app att funka i test. Det var då jag lärde mig att man kan köra med dubbla namespaces genom att sätta ett namespace på use ungefär som ett trait. Det låter mig låna klasser från just det namespacet
 
 
 Kmom05

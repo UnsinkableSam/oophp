@@ -22,10 +22,12 @@ class Computer extends Hand
     /**
     * This rolls the rice for the computer
     */
-    public function compRoll()
+    public function compRoll($playerTotal)
     {
-        $this->roll();
-
+           $this->roll();
+        if ($playerTotal > $this->total) {
+            $this->roll();
+        }
     }
 
     public function resetTotal(int $sum)
@@ -36,17 +38,5 @@ class Computer extends Hand
     public function setTotal(int $sum)
     {
         $this->overallTotal += $sum;
-    }
-
-
-    public function round()
-    {
-        $this->round++;
-    }
-
-
-    public function getRound()
-    {
-        return $this->round;
     }
 }

@@ -27,7 +27,6 @@ class Dice
     {
         $number = rand(1, 6);
         array_push($this->lastRoll, $number);
-
         return $number;
     }
 

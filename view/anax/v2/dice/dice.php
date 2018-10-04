@@ -4,48 +4,50 @@ namespace sapt17\Dice ;
 /**
 * The view of dice game.
 */
+$request = new \Anax\Request\Request();
+
+# Set (reset) globals, useful in unit testing
+# when not using $_GET, $_POST, $_SERVER
+$request->setGlobals();
+
+# Init the class by extracting url parts and
+# route path.
+$request->init();
 
 
-$diceHundred = $diceHundred ?? new Game("Player", 0);
+$diceHundred = $diceHundred ?? new Game("Player", 1, $app);
 
 
 
-// if ($diceHundred->turn == 1) {
-//     echo "<h2> Computer goes first </h2>";
-// } elseif ($diceHundred->turn == 2) {
-//     echo "<h2> Player goes first </h2>";
-// }
 
-
-
-if (isset($_POST["compRoll"])) {
-    $diceHundred->start(2);
-    $diceHundred->computerRoll();
+if ($request->getPost("compRoll")) {
+    $diceHundred->start(2, $app);
+    $diceHundred->computerRoll($app);
 }
 
-if (isset($_POST["Roll"])) {
-    $diceHundred->playerRoll();
+if ($request->getPost("Roll")) {
+    $diceHundred->playerRoll($app);
 }
 
 
-if (isset($_POST["save"])) {
-    $diceHundred->start(1);
-    $diceHundred->setPlayerTotal($diceHundred->player->total);
+if ($request->getPost("save")) {
+    $diceHundred->start(1, $app);
+    $diceHundred->setPlayerTotal($diceHundred->player->total, $app);
     $diceHundred->player->total = 0;
 }
 
-if (isset($_POST["reset"])) {
-    $diceHundred->reset();
+if ($request->getPost("reset")) {
+    $diceHundred->reset($app);
 }
 
-if (isset($_POST["start"])) {
+if ($request->getPost("start")) {
     $diceHundred->firstRoll();
     if ($diceHundred->startPlayer->total > $diceHundred->startComputer->total) {
         print_r("<h2>" . $diceHundred->startPlayer->name . " starts </h2>");
-        $diceHundred->start(2);
+        $diceHundred->start(2, $app);
     } elseif ($diceHundred->startPlayer->total < $diceHundred->startComputer->total) {
         print_r("<h2>" . $diceHundred->startComputer->name . " starts </h2>");
-        $diceHundred->start(1);
+        $diceHundred->start(1, $app);
     }
 }
 
@@ -100,15 +102,38 @@ if (isset($_POST["start"])) {
 
 <form method="post">
     <?php
-    if ($_SESSION["turn"] == 2 && $diceHundred->active != false) {
+    if ($app->session->get("turn") == 2 && $diceHundred->active != false) {
         echo '<input type="submit" name="Roll" value="Roll">';
         echo '<input type="submit" name="save" value="save">';
-    } elseif ($_SESSION["turn"] == 1 && $diceHundred->active != false) {
+    } elseif ($app->session->get("turn") == 1 && $diceHundred->active != false) {
         echo '<input type="submit" name="compRoll" value="compRoll">';
     }
+
+
+
+
+
+
+
+
+    $histogram = new Histogram();
+    $histogram->injectData($diceHundred->player);
+
+    $histogramComp = new Histogram();
+    $histogramComp->injectData($diceHundred->computer);
+
+
+
+
     ?>
+    <h1>Display a histogram player</h1>
 
+    <p><?= $histogram->getSerie() ?></p>
+    <pre><?= $histogram->getAsText() ?></pre>
 
+    <h1> Display a histogram computer</h1>
+    <p><?= $histogramComp->getSerie() ?></p>
+    <pre><?= $histogramComp->getAsText() ?></pre>
 
         <?php } ?>
     <input type="submit" name="reset" value="reset">
