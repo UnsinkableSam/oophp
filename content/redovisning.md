@@ -142,6 +142,21 @@ Kmom05
 
 Här är redovisningstexten
 
+KMOM05
+
+•	Några reflektioner kring koden i övningen för PHP PDO och MySQL?
+Jag känner igen koden. Jag är inte hundra men tror jag känner igen det just ifrån HTML/php kursen. Jag tycker det är lätt att jobba med PDO. Jag föredrar att bygga upp min funktion för databasen i just atom istället för att skapade i workbench. Det känns som man får mer kontroll men samtidigt skulle jag spara massa kod genom att göra allt i workbench istället.
+•	PDO har massa med funktioner som underlättar jobbet med just databaser. Det är även väldigt enkelt att förstå och använda överlag.  
+•	Hur gick det att överföra koden in i ramverket, stötte du på några utmaningar?
+Nej jag kan inte säga direkt jag stötte på några större utmaningar utan det kanske var mer att jag gjorde lite slav fel som kostade lite tid annars var detta en väldigt enkel del av kursen. Jag tror vi har fått en väldigt stadig grund från tidigare kursen för att jobba med databaser. Jag känner mig väldigt bekväm att jobba med php och databaser.
+•	Berätta om din slutprodukt för filmdatabasen, gjorde du endast basfunktionaliteten eller lade du till extra features och hur tänkte du till kring användarvänligheten och din kodstruktur?
+Nej jag har inte direkt gjort några extra uppgifter eller lagt extra tid. Jag gjorde det så enkelt som möjligt för en användare. Man har ett litet sök bar högst upp och man har delete, read, update på varje rad där man har en film. Jag vet inte direkt hur jag börjad jobba på denna konstruktionen det var bara det som kändes rätt.
+Jag delade även upp koden på olika php sidor i view just för att det skulle vara lite lättare att läsa och koda i.
+Jag hade funderingar kring att bygga upp objekt runt de olika funktionerna jag hade för att jobba med databasen och överföra informationen till view sidorna.
+•	Vilken är din TIL för detta kmom?
+Inte större direkt det var mer att jag lärde mig hur man loggade in på blu-ray servern och hur man fixade med config för databas både lokalt och på servern.
+
+
 
 
 Kmom06
