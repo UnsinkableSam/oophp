@@ -33,7 +33,7 @@ class Hand implements HistogramInterface
 
     public function check()
     {
-        $this->total = 0;
+        // $this->total = 0;
         $this->dicesChecked = [];
         for ($i = 0; $i < count($this->dices); $i++) {
             if ((int)$this->dices[$i]->number == 1) {
@@ -41,6 +41,7 @@ class Hand implements HistogramInterface
                 $this->dices = [];
                 break;
             }
+            print_r($this->dicesChecked);
             array_push($this->dicesChecked, $this->dices[$i]);
             $this->total += $this->dices[$i]->number;
         }

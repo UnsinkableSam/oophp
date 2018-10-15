@@ -43,6 +43,7 @@ class ErrorHandlerController implements ContainerInjectableInterface
             ],
         ];
 
+
         $path = $this->di->get("router")->getMatchedPath();
         if (!array_key_exists($path, $pages)) {
             throw new NotFoundException("Internal route for '$path' is not found.");

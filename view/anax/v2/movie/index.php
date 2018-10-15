@@ -8,9 +8,18 @@ $request->setGlobals();
 $request->init();
 
 
-$search = $request->getPost("search") ?? "";
-$sql = "SELECT * FROM movie WHERE title LIKE  '%$search%' OR YEAR LIKE '%$search%'";
+
+$sql = "SELECT * FROM movie";
 $res = $app->db->executeFetchAll($sql);
+
+$search = $request->getPost("search") ?? "";
+
+if ($search) {
+    print_r($search);
+    $sql = "SELECT * FROM movie WHERE title LIKE ? OR YEAR LIKE ?";
+    $res = $app->db->executeFetchAll($sql, [$search, $search]);
+    // code...
+}
 
 
 
@@ -28,8 +37,8 @@ function deleteMovie($id, $app)
     $res = $app->db->executeFetchAll($sql);
 }
 
-$sql = "SELECT * FROM movie";
-$res = $app->db->executeFetchAll($sql);
+
+
 
 
 ?>
@@ -70,6 +79,6 @@ $res = $app->db->executeFetchAll($sql);
         <button type="submit" name="read" value="<?php  $res[$i]->id?>">READ</button>
      </form></th>
   </tr>
-  
+
 <?php } ?>
 </table>

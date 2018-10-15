@@ -47,6 +47,7 @@ class Game
             $this->turn = $app->session->set("turn", 2);
         } else {
             $this->setComputerTotal($this->computer->total, $app);
+            $this->computer->total = 0;
         }
     }
 

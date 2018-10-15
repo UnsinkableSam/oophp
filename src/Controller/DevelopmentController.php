@@ -38,7 +38,7 @@ class DevelopmentController implements ContainerInjectableInterface
             "session/destroy" => "session_destroy",
             "view" => "view",
         ];
-
+        
         $path = $this->di->get("router")->getMatchedPath();
 
         if (!array_key_exists($path, $pages)) {

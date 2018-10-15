@@ -33,6 +33,19 @@ return [
         "url" => "Dice",
         "title" => "Dice 100.",
     ],
+
+    [
+        "text" => "movie",
+        "url" => "movie",
+        "title" => "movie.",
+    ],
+
+    [
+        "text" => "pages/blog",
+        "url" => "blog/show-all",
+        "title" => "movie.",
+    ],
+
     [
         "text" => "Development",
         "url" => "dev",

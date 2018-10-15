@@ -36,7 +36,7 @@ class Guess
             $this->tries = $tries - 1;
         }
         if ($tries < 1) {
-            $this->message = "You lost and game click reset to start over.";
+            $this->message = "You lost and game click reset to start over. \n";
         }
     }
 
@@ -108,15 +108,15 @@ class Guess
             } else {
                 if ($this->number == $number) {
                     $this->win = 1;
-                    $this->value = " WINNER ";
+                    $this->value = " WINNER \n";
                 } elseif ($this->number > $number) {
-                    $this->value = " Higher! ";
+                    $this->value = " Higher! \n";
                 } else {
-                    $this->value = " Lower! ";
+                    $this->value = " Lower! \n";
                 }
             }
         } catch (RangeException $e) {
-            $this->value = "can't be less then 1 or higher then 100";
+            $this->value = "can't be less then 1 or higher then 100 \n";
         }
     }
 }
